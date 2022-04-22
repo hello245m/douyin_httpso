@@ -18,8 +18,8 @@ jobs:
         run: echo "::set-output name=PROJECT::https://github.com/China-0x4thk/douyin_httpso"
       - name: Clone project
         run: git clone --depth=1 ${{ steps.get-project.outputs.PROJECT }} project
+        
       - name: Build the app
-        working-directory: ./project
         run: |
           if [ ! -f "gradlew" ]; then gradle wrapper; fi
           chmod +x gradlew
