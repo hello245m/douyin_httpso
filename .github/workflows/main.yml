@@ -15,7 +15,7 @@ jobs:
           java-version: 1.8
       - id: get-project
         name: Get project name
-        run: echo "::set-output name=PROJECT::https://github.com/China-0x4thk/douyin_httpso"
+        run: echo "::set-output name=PROJECT::https://github.com/hello245m/douyin_httpso"
       - name: Clone project
         run: git clone --depth=1 ${{ steps.get-project.outputs.PROJECT }} project
         
