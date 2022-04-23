@@ -35,7 +35,7 @@ public class MyController {
     }
     @ResponseBody
     @PostMapping("/getsign")
-    String getNewGogon(@RequestBody String body) {
+    String getNewGogonBystr(@RequestBody String body) {
         try {
             JSONObject bd = new JSONObject(body);
             String shijian = (String) bd.get("tm");
