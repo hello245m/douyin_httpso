@@ -34,20 +34,7 @@ public class MyController {
         response.setBody(new JsonBody(jsonObject));
     }
     @ResponseBody
-    @PostMapping("/getsign")
-    String getNewGogonBystr(@RequestBody String body) {
-        try {
-            JSONObject bd = new JSONObject(body);
-            String shijian = (String) bd.get("tm");
-            String pingjie = (String) bd.get("pj");
-            return gorgon.getGorgonBystr(shijian,pingjie);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-    @ResponseBody
-    @PostMapping("/gorgon")
+    @PostMapping("/postsign")
     String getNewGogon(@RequestBody String body) {
         try {
             JSONObject bd = new JSONObject(body);
@@ -61,7 +48,7 @@ public class MyController {
     }
 
     @ResponseBody
-    @PostMapping("/url")
+    @PostMapping("/getsign")
     String getNewGogonUrl(@RequestBody String body) {
         return gorgon.getGorgon(body);
     }
