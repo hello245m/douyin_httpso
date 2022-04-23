@@ -59,7 +59,11 @@ public class gorgon {
         byte[] leviathan = com.ss.sys.ces.a.leviathan(-1, ks, com.ss.a.b.a.ac(URL + X_SS_STUB + COOKIE + SESSION_ID));
         return com.ss.a.b.a.ab(leviathan);
     }
-
+    public static String getGorgonBystr(String shijian,String pingjie) {
+        int ks = Integer.parseInt(shijian);
+        byte[] leviathan = com.ss.sys.ces.a.leviathan(-1, ks, com.ss.a.b.a.ac(pingjie));
+        return com.ss.a.b.a.ab(leviathan);
+    }
 
     public static String getGorgon(String url, HashMap<String, String> headers) {
         String urlParams = getUrlParams(url);
