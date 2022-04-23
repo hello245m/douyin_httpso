@@ -33,7 +33,19 @@ public class MyController {
         JSONObject jsonObject = new JSONObject(signMap);
         response.setBody(new JsonBody(jsonObject));
     }
-
+    @ResponseBody
+    @PostMapping("/getsign")
+    String getNewGogon(@RequestBody String body) {
+        try {
+            JSONObject bd = new JSONObject(body);
+            String shijian = (String) bd.get("tm");
+            String pingjie = (String) bd.get("pj");
+            return gorgon.getGorgonBystr(shijian,pingjie);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     @ResponseBody
     @PostMapping("/gorgon")
     String getNewGogon(@RequestBody String body) {
