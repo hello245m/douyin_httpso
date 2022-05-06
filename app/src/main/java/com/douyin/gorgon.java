@@ -101,7 +101,7 @@ public class gorgon {
     }
 
     private static String getTime(String url) {
-        Matcher matcher = Pattern.compile("^.*?rticket=(\\d+)&.*?").matcher(url);
+        Matcher matcher = Pattern.compile("^.*?rticket=(\\d+).*?").matcher(url);
         String result = null;
         if (matcher.find()) {
             result = matcher.group(1);
